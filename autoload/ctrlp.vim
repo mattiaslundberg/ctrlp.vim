@@ -2367,6 +2367,7 @@ endfu
 
 fu! ctrlp#init(type, ...)
 	if exists('s:init') || s:iscmdwin() | retu | en
+	let g:ctrlp_before_winnr = winnr()
 	let [s:ermsg, v:errmsg] = [v:errmsg, '']
 	let [s:matches, s:init] = [1, 1]
 	cal s:Reset(a:0 ? a:1 : {})
